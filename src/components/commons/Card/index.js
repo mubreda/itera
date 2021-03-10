@@ -6,23 +6,24 @@ import { Text } from '../../foundation/Text';
 import CardWrapper from './styles';
 
 export function Card({
-  image, title, info, url,
+  image, url, // title, info,
 }) {
   return (
     <CardWrapper
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      width={{
-        xs: '450px',
-        xl: '300px',
-      }}
+      backgroundImage={image}
+      // width={{
+      //   xs: '450px',
+      //   xl: '300px',
+      // }}
     >
       <CardWrapper.Image
         src={image}
         alt="imagem projeto"
       />
-      <CardWrapper.Footer>
+      {/* <CardWrapper.Footer>
         <Text
           variant="subtitle"
           tag="h2"
@@ -37,7 +38,7 @@ export function Card({
         >
           {info}
         </Text>
-      </CardWrapper.Footer>
+      </CardWrapper.Footer> */}
     </CardWrapper>
   );
 }
@@ -64,14 +65,14 @@ export function HLCard({
         <Text
           variant="subtitle"
           tag="h2"
-          color="tertiary.main"
+          color="primary.main"
         >
           {title}
         </Text>
         <Text
           variant="paragraph2"
           tag="p"
-          color="tertiary.light"
+          color="primary.main"
         >
           {info}
         </Text>

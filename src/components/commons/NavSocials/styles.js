@@ -14,12 +14,12 @@ SocialBar.StyleIcon = styled.a`
         cursor: pointer;
 
         path, circle{
-            transition: .7s ease;
+            transition: ${({ theme }) => theme.transition};
         }
 
         &:hover{
             path, circle{
-                fill: #62F0BD;
+                fill: ${({ theme }) => theme.colors.secondary.main.color};
                 transform: translate3d(0, 2px, 0);
             }
         }

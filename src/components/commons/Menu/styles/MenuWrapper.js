@@ -3,8 +3,9 @@
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 import { TextStyleVariants } from '../../../foundation/Text';
+import propToStyle from '../../../../theme/utils/propToStyle';
 
-const HeaderWrapper = styled.nav`
+const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
   display: flex;
   align-items: center;
@@ -16,7 +17,7 @@ const HeaderWrapper = styled.nav`
   ${breakpointsMedia({
     md: css`
       justify-content: flex-start;
-      margin-top: 32px;
+      padding-top: 32px;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
@@ -24,26 +25,19 @@ const HeaderWrapper = styled.nav`
       // max-width: 768px;
     `,
     lg: css`
-      // max-width: 1160px; 
+     // max-width: 1160px; 
     `,
     xl: css`
       // max-width: 1222px;
     `,
   })}
-  position: static;
 `;
 
-HeaderWrapper.LeftSide = styled.div`
+MenuWrapper.LeftSide = styled.div`
   padding: 0;
   margin: 0;
   order: 1;
-  position: fixed;
-  ${breakpointsMedia({
-    md: css`
-        width: 131px;
-        height: 32px;
-      `,
-  })}
+  display: flex;
   ${breakpointsMedia({
     md: css`
       order: initial;
@@ -52,7 +46,7 @@ HeaderWrapper.LeftSide = styled.div`
   })}
 `;
 
-HeaderWrapper.NavMenu = styled.div`
+MenuWrapper.CentralSide = styled.div`
   padding: 0;
   margin: 0;
   order: 3;
@@ -62,28 +56,30 @@ HeaderWrapper.NavMenu = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 17px;
-  border-top: 1px solid #88989E;
-  border-bottom: 1px solid #88989E;
+  border-top: 1px solid ${({ theme }) => theme.colors.primary.light.color};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.primary.light.color};
   padding: 12px;
   
   ${breakpointsMedia({
     md: css`
-      max-width: 332px;
+      max-width: 40rem;
       justify-content: space-between;
       flex: 1;
       order: initial;
       border: none;
       margin: 0;
+      margin-left: 2rem;
       padding-top: 0;
       padding-bottom: 0;
     `,
   })}
+  ${propToStyle('paddingTop')}
   a {
     text-align: center;
     display: block;
     text-decoration: none;
-    color: white;
-    transition: .7s ease;
+    color: ${({ theme }) => theme.colors.primary.light.color};
+    transition: ${({ theme }) => theme.transition};
     ${breakpointsMedia({
     xs: css`
         ${TextStyleVariants.smallestException}
@@ -94,27 +90,25 @@ HeaderWrapper.NavMenu = styled.div`
   })}
     &:hover,
     &:focus {
-      color: #62F0BD;
       transform: translate3d(0, 2px, 0);
+      color: ${({ theme }) => theme.colors.secondary.main.color};
       
     }
   }
 `;
 
-HeaderWrapper.RightSide = styled.div`
+MenuWrapper.RightSide = styled.div`
   padding: 0;
   margin: 0;
   display: flex;
   flex: 1;
   order: 2;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
   ${breakpointsMedia({
-    lg: css`
-      // order: initial;
-      justify-content: flex-end;
+    md: css`
+      order: initial;
     `,
   })}
 `;
 
-export default HeaderWrapper;
+export default MenuWrapper;

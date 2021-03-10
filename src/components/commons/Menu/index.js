@@ -1,23 +1,49 @@
 /* eslint-disable linebreak-style */
-
 import React from 'react';
-import HeaderWrapper from './styles/MenuWrapper';
+import MenuWrapper from './styles/MenuWrapper';
 import { Text } from '../../foundation/Text';
-import SocialBar from '../NavSocials/styles';
-import Instagram from '../../../theme/Icons/instagram';
-import Linkedin from '../../../theme/Icons/linkedin';
-import GitHub from '../../../theme/Icons/github';
+import Button from '../Button';
 
 export default function Menu() {
   return (
-    <HeaderWrapper>
-      <HeaderWrapper.NavMenu as="ul">
-        {' '}
-        {/* HeaderWrapper.NavMenu */}
+    <MenuWrapper>
+      <MenuWrapper.LeftSide>
+        <Text
+          variant="title"
+          tag="h1"
+          color="primary.main"
+          margin="0"
+          textAlign={{
+            xs: 'center',
+            md: 'left',
+          }}
+          marginTop="-0.5rem"
+          fontSize="2rem"
+        >
+          John Doe
+          <Text
+            variant="title"
+            tag="span"
+            color="secondary.main"
+            margin="0"
+            textAlign={{
+              xs: 'center',
+              md: 'left',
+            }}
+            marginTop="-0.5rem"
+            fontSize="2rem"
+          >
+            .
+          </Text>
+        </Text>
+      </MenuWrapper.LeftSide>
+      <MenuWrapper.CentralSide as="ul">
         {[
           { url: '/', name: 'Home' },
-          { url: '/faq', name: 'Projetos' },
-          { url: '/sobre', name: 'Sobre' },
+          { url: '/faq', name: 'About me' },
+          { url: '/whatido', name: 'What i do?' },
+          { url: '/portfolio', name: 'Portfolio' },
+          { url: '/blog', name: 'Blog' },
         ].map((link) => (
           <li key={link.url}>
             <Text variant="smallestException" tag="a" href={link.url}>
@@ -25,20 +51,14 @@ export default function Menu() {
             </Text>
           </li>
         ))}
-      </HeaderWrapper.NavMenu>
-      <HeaderWrapper.RightSide>
-        {' '}
-        {/* HeaderWrapper.RightSide */}
-        <SocialBar.StyleIcon href="https://www.instagram.com/mubreda/" target="_blank" rel="noopener noreferrer">
-          <Instagram />
-        </SocialBar.StyleIcon>
-        <SocialBar.StyleIcon href="https://www.linkedin.com/in/mubreda/" target="_blank" rel="noopener noreferrer">
-          <Linkedin />
-        </SocialBar.StyleIcon>
-        <SocialBar.StyleIcon href="https://github.com/mubreda" target="_blank" rel="noopener noreferrer">
-          <GitHub />
-        </SocialBar.StyleIcon>
-      </HeaderWrapper.RightSide>
-    </HeaderWrapper>
+        <Button
+          variant="secondary.main"
+          margin="0"
+          display="block"
+        >
+          Contact
+        </Button>
+      </MenuWrapper.CentralSide>
+    </MenuWrapper>
   );
 }

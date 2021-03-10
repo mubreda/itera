@@ -13,60 +13,39 @@ const ButtonGhost = css`
 
 const ButtonDefault = css`
   color: ${({ theme, variant }) => get(theme, `colors.${variant}.contrastText`)};
-  background: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
+  background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
+  box-shadow:-1px 3px 8px 1px rgba(243,91,15,0.56);
 `;
 
 const Button = styled.button`
   border: 0;
   cursor: pointer;
-  padding: 12px 26px;
+  padding: 8px 26px;
   font-weight: bold;
   opacity: 1;
-  transition: opacity ${({ theme }) => theme.transition};
+  transition: ${({ theme }) => theme.transition};
   border-radius: ${({ theme }) => theme.borderRadius};
   
   ${breakpointsMedia({
     xs: css`
-      ${TextStyleVariants.smallestException}
+      ${TextStyleVariants.paragraph1}
     `,
     md: css`
-      padding: 12px 43px;
       ${TextStyleVariants.paragraph1}
     `,
   })}
 
   ${propToStyle('margin')}
   ${propToStyle('display')}
+  ${propToStyle('padding')}
+  ${propToStyle('width')}
+  ${propToStyle('height')}
 
   ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
-
-  &::after{
-        content: '';
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0px;
-        
-        background: ${({ theme }) => theme.colors.borders.main.color};
-        border-radius:  ${({ theme }) => theme.borderRadius};
-
-        width: 0%;
-        height: 100%;
-        z-index: -1;
-
-        transition: .7s ease;
-    }
-
-
-    &:hover{
-
-        transform: scale(1.05);
-
-        &:after{
-            opacity: 1;
-            width: 100%;
-        }
-    }
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
 `;
 
 export default Button;

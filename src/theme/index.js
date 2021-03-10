@@ -5,41 +5,32 @@ import typographyVariants from './typographyVariants';
 export const colors = {
   background: {
     light: {
+      color: '#F8F9FB',
+    },
+    main: {
       color: '#FFFFFF',
-    },
-    main: {
-      color: '#F2F2F2',
-    },
-  },
-  borders: {
-    main: {
-      color: '#51C99E',
     },
   },
   primary: {
     main: {
-      color: 'linear-gradient(270deg, rgba(98, 240, 189, 0) 0%, #62F0BD 100%)',
-      contrastText: '#fff',
+      color: '#212428',
+      contrastText: '#FFFFFF',
+    },
+    light: {
+      color: '#333840',
+      contrastText: '#FFFFFF',
     },
   },
   secondary: {
     main: {
-      color: '#4D5258',
-      contrastText: '#fff',
+      color: '#F35B0F',
+      contrastText: '#FFFFFF',
     },
   },
   tertiary: {
     main: {
-      color: '#62F0BD',
-      contrastText: '#fff',
-    },
-    light: {
-      color: '#E5E9EF',
-      contrastText: '#fff',
-    },
-    text: {
-      color: '#B5B6B8',
-      contrastText: '#fff',
+      color: '#FFFFFF',
+      contrastText: '#212428',
     },
   },
   modes: {
@@ -59,7 +50,7 @@ export default {
   colors,
   typographyVariants,
   breakpoints,
-  borderRadius: '12px',
-  transition: '200ms ease-in-out',
+  borderRadius: '28px',
+  transition: '.7s ease',
   fontFamily: '\'Rubik\', sans-serif',
 };

@@ -19,8 +19,72 @@ export default function Capa() {
         }}
       >
         <Grid.Col
-          value={{ xs: 12, md: 5 }}
-          offset={{ xs: 0, md: 1 }}
+          value={{ xs: 6, md: 3 }}
+          offset={{ xs: 0, md: 0 }}
+          display="flex"
+          justifyContent="center"
+          flexDirection="column"
+          alignItems={{
+            xs: 'flex-start',
+            md: 'flex-start',
+          }}
+        >
+          <Text
+            variant="title"
+            tag="h1"
+            color="primary.main"
+            margin="0"
+            textAlign={{
+              xs: 'center',
+              md: 'left',
+            }}
+            fontSize="72px"
+          >
+            Hello
+            <Text
+              variant="title"
+              tag="span"
+              color="secondary.main"
+              margin="0"
+              textAlign={{
+                xs: 'center',
+                md: 'left',
+              }}
+              fontSize="72px"
+            >
+              .
+            </Text>
+          </Text>
+          <Text
+            variant="title"
+            tag="h1"
+            color="primary.main"
+            margin="0"
+            textAlign={{
+              xs: 'center',
+              md: 'left',
+            }}
+            fontSize="72px"
+          >
+            I am
+          </Text>
+          <Text
+            variant="title"
+            tag="h1"
+            color="primary.main"
+            margin="0"
+            textAlign={{
+              xs: 'center',
+              md: 'left',
+            }}
+            fontSize="72px"
+          >
+            John
+          </Text>
+        </Grid.Col>
+        <Grid.Col
+          value={{ xs: 6, md: 2 }}
+          offset={{ xs: 0, md: 0 }}
           display="flex"
           justifyContent="center"
           flexDirection="column"
@@ -30,52 +94,62 @@ export default function Capa() {
           }}
         >
           <Text
-            variant="title"
-            tag="h1"
-            color="tertiary.main"
-            textAlign={{
-              xs: 'center',
-              md: 'left',
-            }}
-          >
-            Olá! Murilo Breda aqui!
-          </Text>
-
-          <Text
-            variant="paragraph1"
+            variant="smallestException"
             tag="p"
-            color="tertiary.light"
+            color="primary.light"
             textAlign={{
               xs: 'center',
               md: 'left',
             }}
+            margin="0"
+            marginLeft="-6rem"
+            marginTop="1.5rem"
           >
-            Profissional formado em Sistemas de informação. Engajado e enérgico,
-            que preza pelo trabalho em equipe, com 5 anos de experiencia na área,
-            trabalhando, em sua maioria, com desenvolvimento em Unity na linguagem C# *.
-            Buscando aprimorar habilidades no desenvolvimento front-end, assim
-            como habilidades analíticas e de codificação.
+            I am a graphic Desginer
           </Text>
-          <Button
-            variant="primary.main"
-            margin={{
-              xs: 'auto',
-              md: 'initial',
+          <Text
+            variant="smallestException"
+            tag="p"
+            color="primary.light"
+            textAlign={{
+              xs: 'center',
+              md: 'left',
             }}
-            display="block"
+            margin="0.5rem"
+            marginLeft="-6rem"
           >
-            Contate-me
-          </Button>
+            and UI Desginer
+          </Text>
         </Grid.Col>
-        <Grid.Col
-          value={{ xs: 12, md: 6 }}
+      </Grid.Row>
+      <Grid.Row
+        marginTop="-48px"
+        flexDirection={{
+          xs: 'column',
+          md: 'row',
+        }}
+      >
+        <Button
+          variant="secondary.main"
+          margin={{
+            xs: 'auto',
+            md: 'initial',
+          }}
+          display="block"
         >
-          <img
-            alt="Imagem murilim"
-            style={{ display: 'block', margin: 'auto' }}
-            src="/images/4.png"
-          />
-        </Grid.Col>
+          Say Hello
+        </Button>
+        <Button
+          ghost
+          variant="secondary.main"
+          margin={{
+            xs: 'auto',
+            md: 'initial',
+          }}
+          display="block"
+        >
+          About me
+        </Button>
       </Grid.Row>
     </Grid.Container>
   );

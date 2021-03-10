@@ -32,6 +32,7 @@ export const TextStyleVariants = {
     font-size: ${theme.typographyVariants.titleXS.fontSize};
     font-weight: ${theme.typographyVariants.titleXS.fontWeight};
     line-height: ${theme.typographyVariants.titleXS.lineHeight};
+    ${propToStyle('fontSize')};
   `}
   ${breakpointsMedia({
     md: css`
@@ -39,6 +40,7 @@ export const TextStyleVariants = {
         font-size: ${theme.typographyVariants.title.fontSize};
         font-weight: ${theme.typographyVariants.title.fontWeight};
         line-height: ${theme.typographyVariants.title.lineHeight};
+        ${propToStyle('fontSize')};
       `}
     `,
   })}
@@ -49,6 +51,9 @@ const TextBase = styled.span`
   ${({ variant }) => TextStyleVariants[variant]}
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
+  ${propToStyle('margin')}
+  ${propToStyle('marginLeft')}
+  ${propToStyle('marginTop')}
 `;
 
 export function Text({

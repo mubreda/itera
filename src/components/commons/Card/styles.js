@@ -4,15 +4,16 @@ import propToStyle from '../../../theme/utils/propToStyle';
 
 const CardWrapper = styled.a`
 display: flex;
+justify-content: center;
 text-decoration:none; 
-width: 300px;
+width: 350px;
 max-height: 100vh;
 box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-flex-direction: column;
+// flex-direction: column;
 margin: 10px;
-background: linear-gradient(360deg, rgba(77, 82, 88, 0) -43%, #4D5258 29.99%);
 ${propToStyle('width')}
 ${propToStyle('flexDirection')}
+${propToStyle('backgroundImage')}
 cursor: pointer;
 transition: .5s ease;
 
@@ -35,9 +36,5 @@ align-items: center;
 flex-direction: column;
 ${propToStyle('alignItems')}
 `;
-
-// CardWrapper.Title = styled.h2``;
-
-// CardWrapper.Text = styled.p``;
 
 export default CardWrapper;
